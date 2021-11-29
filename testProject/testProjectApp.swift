@@ -1,10 +1,3 @@
-//
-//  testProjectApp.swift
-//  testProject
-//
-//  Created by Rita Kazakova on 11/27/21.
-//
-
 import SwiftUI
 
 @main
