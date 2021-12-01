@@ -9,6 +9,7 @@ struct Cats: Codable, Identifiable {
     let url: String
     var width: Int
     var height: Int
+//    var isFavourite: Bool = true
 }
 
 class apiCall: ObservableObject {
@@ -58,22 +59,27 @@ struct ContentView: View {
     
     @ObservedObject var model = apiCall()
     
-    
     var body: some View {
         NavigationView {
         
            List() {
             
             ForEach(model.cats) { cat in
-                WebImage(url: URL(string: cat.url))
+                HStack {
                     
-                    .resizable()
-                    .placeholder {
-                        Text("Loading...").frame(width: CGFloat(cat.width), height: CGFloat(cat.height), alignment: .leading)
-                    }
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: .fit)
-            }
+                    WebImage(url: URL(string: cat.url))
+                        
+                        .resizable()
+                        .placeholder {
+                            Text("Loading...").frame(width: CGFloat(cat.width), height: CGFloat(cat.height), alignment: .leading)
+                        }
+                        .renderingMode(.original)
+                        .aspectRatio(contentMode: .fit)
+
+//                    if cat.isFavourite {
+                        Image(systemName: "star.fill")
+//                    }
+                }            }
             
             
             if model.catsListFull == false {
@@ -85,11 +91,6 @@ struct ContentView: View {
             
         }
         .navigationBarTitle("Cats", displayMode: .inline)
-        .onAppear() {
-            model.getCats()
-            
-        }
-
         }
     }
 }
@@ -100,3 +101,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
