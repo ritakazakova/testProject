@@ -4,7 +4,16 @@ import SwiftUI
 struct testProjectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ContentView()
+                    .tabItem {
+                        Label("Cats", systemImage: "photo")
+                    }
+                    FavouriteCatsView()
+                    .tabItem {
+                        Label("Favourite", systemImage: "star.fill")
+                    }
+            }
         }
     }
 }

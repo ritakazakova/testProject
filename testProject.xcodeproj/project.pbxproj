@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		056D59270AE854556123A550 /* Pods_testProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31634D68DE55614DC5C7FE93 /* Pods_testProject.framework */; };
+		1170F9C3275763AD000595AF /* FavouriteCatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170F9C2275763AD000595AF /* FavouriteCatsView.swift */; };
 		11A9D8922752456400F8FF26 /* testProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A9D8912752456400F8FF26 /* testProjectApp.swift */; };
 		11A9D8942752456400F8FF26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A9D8932752456400F8FF26 /* ContentView.swift */; };
 		11A9D8962752456800F8FF26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A9D8952752456800F8FF26 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		099A499055C0C59A7EEA31A5 /* Pods-testProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testProject.debug.xcconfig"; path = "Target Support Files/Pods-testProject/Pods-testProject.debug.xcconfig"; sourceTree = "<group>"; };
+		1170F9C2275763AD000595AF /* FavouriteCatsView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = FavouriteCatsView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		11A9D88E2752456400F8FF26 /* testProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A9D8912752456400F8FF26 /* testProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testProjectApp.swift; sourceTree = "<group>"; };
 		11A9D8932752456400F8FF26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				11A9D8912752456400F8FF26 /* testProjectApp.swift */,
 				11A9D8932752456400F8FF26 /* ContentView.swift */,
+				1170F9C2275763AD000595AF /* FavouriteCatsView.swift */,
 				11A9D8952752456800F8FF26 /* Assets.xcassets */,
 				11A9D89A2752456800F8FF26 /* Info.plist */,
 				11A9D8972752456800F8FF26 /* Preview Content */,
@@ -82,7 +85,6 @@
 				099A499055C0C59A7EEA31A5 /* Pods-testProject.debug.xcconfig */,
 				A5F428FF56685B294334C314 /* Pods-testProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11A9D8942752456400F8FF26 /* ContentView.swift in Sources */,
+				1170F9C3275763AD000595AF /* FavouriteCatsView.swift in Sources */,
 				11A9D8922752456400F8FF26 /* testProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,6 @@ struct Cats: Codable, Identifiable {
     let url: String
     var width: Int
     var height: Int
-//    var isFavourite: Bool = true
 }
 
 class apiCall: ObservableObject {
@@ -17,6 +16,7 @@ class apiCall: ObservableObject {
     var currentPage = 0
     var perPage = 5
     var catsListFull = false
+    var isFavourite: Bool = true
     
     func getCats() {
         
@@ -58,6 +58,9 @@ class apiCall: ObservableObject {
 struct ContentView: View {
     
     @ObservedObject var model = apiCall()
+    @GestureState var press = false
+    @State var show = false
+    
     
     var body: some View {
         NavigationView {
@@ -76,9 +79,20 @@ struct ContentView: View {
                         .renderingMode(.original)
                         .aspectRatio(contentMode: .fit)
 
-//                    if cat.isFavourite {
+                    if model.isFavourite {
                         Image(systemName: "star.fill")
-//                    }
+                            .foregroundColor(show ? Color.yellow:Color.gray)
+                            .scaleEffect(press ? 2:1)
+                            .gesture(
+                                LongPressGesture(minimumDuration: 0)
+                                    .updating($press) { currentState, gestureState, transaction in
+                                        gestureState = currentState
+                                    }
+                                    .onEnded { value in
+                                        show.toggle()
+                                    }
+                            )
+                    }
                 }            }
             
             
@@ -91,6 +105,8 @@ struct ContentView: View {
             
         }
         .navigationBarTitle("Cats", displayMode: .inline)
+            
+            
         }
     }
 }
