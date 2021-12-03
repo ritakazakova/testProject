@@ -5,11 +5,11 @@ struct testProjectApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                ContentView()
+                CatsView()
                     .tabItem {
                         Label("Cats", systemImage: "photo")
                     }
-                    FavouriteCatsView()
+                FavouriteCatsView()
                     .tabItem {
                         Label("Favourite", systemImage: "star.fill")
                     }
